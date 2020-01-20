@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: UsersWP - ReCaptcha
-Plugin URI: https://userswp.io
+Plugin URI: https://userswp.io/
 Description: ReCaptcha add-on for UsersWP.
 Version: 1.3
 Author: AyeCode Ltd
