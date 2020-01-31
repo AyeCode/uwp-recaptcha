@@ -94,9 +94,6 @@ class ReCaptcha
         $req_url = str_replace("&amp;", "&", $path . $req);
         $response = $this->getCurlData($req_url);
         return $response;
-
-        $response = file_get_contents($path . $req);
-        return $response;
     }
 
     /**
