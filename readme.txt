@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 4.9
 Tested up to: 5.3
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,15 +12,16 @@ ReCaptcha addon for UsersWP.
 
 == Description ==
 
-The UsersWP Re-Captcha plugin allows you to implement a super security captcha into forms like
+ReCaptcha addon for [UsersWP](https://wordpress.org/plugins/userswp/).
+
+The UsersWP ReCaptcha plugin allows you to implement a super security captcha into forms like
 registration, login forms. UsersWP Re-Captcha protects your site against spam, malicious registrations
 and other forms of attacks where computers try to disguise themselves as a human.
 
 UsersWP Re-Captcha provides some of the smartest anti-spam security by protecting your site against spam and
 malicious registrations available today for WordPress.
 
-[Learn how reCAPTCHA works](https://www.google.com/recaptcha/) and
-join [forum](https://groups.google.com/forum/#!forum/recaptcha).
+[Learn how reCAPTCHA works](https://www.google.com/recaptcha/)
 
 == Requirements ==
 
@@ -32,7 +33,8 @@ join [forum](https://groups.google.com/forum/#!forum/recaptcha).
 
 = Automatic installation =
 
-TBA
+Automatic installation is the easiest option. To do an automatic install of UsersWP - ReCaptcha, log in to your WordPress dashboard, navigate to the Plugins menu and click Add New.
+Search for "UsersWP ReCaptcha" and click Install.
 
 = Manual installation =
 
@@ -48,12 +50,14 @@ No questions so far, but don't hesitate to ask!
 
 == Screenshots ==
 
-TBA
+1. UWP Login
+2. WP Login
 
 == Changelog ==
 
-= 1.3.1 =
+= 1.3.2 =
 * Settings reset to default all the time we activate plugin - FIXED
+* First wp.org release - YAY
 
 = 1.2.0 =
 * Compatibility with new UWP core style updates - ADDED
