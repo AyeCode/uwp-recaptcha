@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 4.9
 Tested up to: 5.3
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,6 +54,9 @@ No questions so far, but don't hesitate to ask!
 2. WP Login
 
 == Changelog ==
+
+= 1.3.3 =
+* ReCaptcha add on runs before UsersWP on some sites causing issue - FIXED
 
 = 1.3.2 =
 * Settings reset to default all the time we activate plugin - FIXED
