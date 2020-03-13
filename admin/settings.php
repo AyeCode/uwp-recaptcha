@@ -65,13 +65,26 @@ function uwp_recaptcha_addons_get_settings( $settings, $current_section ) {
                     'step' => 0.1,
                 ),
             ),
+	        array(
+		        'id'   => 'enable_recaptcha_in_wp_login_form',
+		        'name' => __( 'Enable ReCaptcha in', 'uwp-recaptcha' ),
+		        'desc' => __( 'WordPress Login Form', 'uwp-recaptcha' ),
+		        'type' => 'checkbox',
+		        'default'  => '1',
+	        ),
+	        array(
+		        'id'   => 'enable_recaptcha_in_wp_register_form',
+		        'name' => '',
+		        'desc' => __( 'WordPress Registeration Form', 'uwp-recaptcha' ),
+		        'type' => 'checkbox',
+		        'default'  => '1',
+	        ),
             array(
                 'id'   => 'enable_recaptcha_in_register_form',
-                'name' => __( 'Enable ReCaptcha in', 'uwp-recaptcha' ),
+                'name' => '',
                 'desc' => __( 'UsersWP Register Form', 'uwp-recaptcha' ),
                 'type' => 'checkbox',
                 'default'  => '1',
-                'class' => 'uwp_label_inline',
             ),
             array(
                 'id'   => 'enable_recaptcha_in_login_form',
@@ -79,7 +92,6 @@ function uwp_recaptcha_addons_get_settings( $settings, $current_section ) {
                 'desc' => __( 'UsersWP Login Form', 'uwp-recaptcha' ),
                 'type' => 'checkbox',
                 'default'  => '1',
-                'class' => 'uwp_label_inline',
             ),
             array(
                 'id'   => 'enable_recaptcha_in_forgot_form',
@@ -87,7 +99,6 @@ function uwp_recaptcha_addons_get_settings( $settings, $current_section ) {
                 'desc' => __( 'UsersWP Forgot Form', 'uwp-recaptcha' ),
                 'type' => 'checkbox',
                 'default'  => '1',
-                'class' => 'uwp_label_inline',
             ),
             array(
                 'id'   => 'enable_recaptcha_in_account_form',
@@ -95,23 +106,6 @@ function uwp_recaptcha_addons_get_settings( $settings, $current_section ) {
                 'desc' => __( 'UsersWP Account Form', 'uwp-recaptcha' ),
                 'type' => 'checkbox',
                 'default'  => '1',
-                'class' => 'uwp_label_inline',
-            ),
-            array(
-                'id'   => 'enable_recaptcha_in_wp_login_form',
-                'name' => '',
-                'desc' => __( 'WordPress Login Form', 'uwp-recaptcha' ),
-                'type' => 'checkbox',
-                'default'  => '1',
-                'class' => 'uwp_label_inline',
-            ),
-            array(
-                'id'   => 'enable_recaptcha_in_wp_register_form',
-                'name' => '',
-                'desc' => __( 'WordPress Registeration Form', 'uwp-recaptcha' ),
-                'type' => 'checkbox',
-                'default'  => '1',
-                'class' => 'uwp_label_inline',
             ),
 
         ));
