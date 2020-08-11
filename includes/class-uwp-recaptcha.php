@@ -116,13 +116,15 @@ if(!class_exists('UsersWP_Recaptcha')) {
 
 	        if (!wp_script_is('uwp_recaptcha_js_api', 'registered')) {
 
+	            $api_domain = apply_filters('uwp_recaptcha_js_domain', 'www.recaptcha.net');
+
 		        if ( $captcha_version == 'v3' ) {
 			        $site_key = uwp_get_option( 'recaptcha_api_key', '' );
-			        wp_register_script( 'uwp_recaptcha_js_api', 'https://www.google.com/recaptcha/api.js?render=' . $site_key, array( 'jquery' ), $this->version, true );
+			        wp_register_script( 'uwp_recaptcha_js_api', 'https://'.$api_domain.'/recaptcha/api.js?render=' . $site_key, array( 'jquery' ), $this->version, true );
 			        wp_enqueue_script( 'uwp_recaptcha_js_api' );
 		        } else {
 			        $language = uwp_recaptcha_language();
-			        wp_register_script( 'uwp_recaptcha_js_api', 'https://www.google.com/recaptcha/api.js?onload=uwp_init_recaptcha&hl=' . $language . '&render=explicit', array( 'jquery' ), $this->version, true );
+			        wp_register_script( 'uwp_recaptcha_js_api', 'https://'.$api_domain.'/recaptcha/api.js?onload=uwp_init_recaptcha&hl=' . $language . '&render=explicit', array( 'jquery' ), $this->version, true );
 			        wp_enqueue_script( 'uwp_recaptcha_js_api' );
 		        }
 

@@ -12,7 +12,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 $settings = get_option('uwp_settings', array());
-if ( 1 == $settings[ 'uninstall_recaptcha_data' ] ) {
+if ( isset($settings[ 'uninstall_recaptcha_data' ]) && 1 == $settings[ 'uninstall_recaptcha_data' ] ) {
     $settings = get_option('uwp_settings', array());
     
     $options = array(
