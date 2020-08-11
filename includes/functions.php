@@ -92,7 +92,8 @@ function uwp_recaptcha_display( $form ) {
                     }
                 </script>
             <?php } else if ( $captcha_version == 'v3' ) {
-                    $api_url = sprintf( 'https://www.google.com/recaptcha/api.js?render=%s', $site_key );
+		            $api_domain = apply_filters('uwp_recaptcha_js_domain', 'www.recaptcha.net');
+                    $api_url = sprintf( 'https://%s/recaptcha/api.js?render=%s', $api_domain, $site_key);
                     echo '<input type="hidden" id="'.$div_id.'" name="g-recaptcha-response">';
                     echo '<script src="' . $api_url . '"></script>
                             <script>
@@ -291,6 +292,8 @@ function uwp_recaptcha_get_response( $privatekey, $remote_ip ) {
         ),
         'sslverify' => false
     );
-    $resp = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $args );
+
+    $api_domain = apply_filters('uwp_recaptcha_js_domain', 'www.recaptcha.net');
+    $resp = wp_remote_post( 'https://'.$api_domain.'/recaptcha/api/siteverify', $args );
     return json_decode( wp_remote_retrieve_body( $resp ), true );
 }
