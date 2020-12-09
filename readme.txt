@@ -3,8 +3,8 @@ Contributors: stiofansisland, paoltaia, ayecode
 Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 4.9
-Tested up to: 5.5
-Stable tag: 1.3.6
+Tested up to: 5.6
+Stable tag: 1.3.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,6 +54,9 @@ No questions so far, but don't hesitate to ask!
 2. WP Login
 
 == Changelog ==
+
+= 1.3.7 =
+* Update readme file for WordPress version 5.6
 
 = 1.3.6 =
 * Loading google api.js from recaptcha.net domain to use recaptcha globally - ADDED
