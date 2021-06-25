@@ -55,6 +55,9 @@ No questions so far, but don't hesitate to ask!
 
 == Changelog ==
 
+= 1.3.9 =
+* Recaptcha V3 giving error for auto approve and auto login - FIXED
+
 = 1.3.8 =
 * Update readme file for WordPress version 5.7
 
