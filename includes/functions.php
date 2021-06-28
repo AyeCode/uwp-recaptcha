@@ -94,7 +94,7 @@ function uwp_recaptcha_display( $form ) {
             <?php } else if ( $captcha_version == 'v3' ) {
 		            $api_domain = apply_filters('uwp_recaptcha_js_domain', 'www.recaptcha.net');
                     $api_url = sprintf( 'https://%s/recaptcha/api.js?render=%s', $api_domain, $site_key);
-                    echo '<input type="hidden" id="'.$div_id.'" name="g-recaptcha-response">';
+                    echo '<input type="hidden" id="'.$div_id.'" name="g-recaptcha-response" class="g-recaptcha-response">';
                     echo '<script src="' . $api_url . '"></script>
                             <script>
                             if (typeof grecaptcha != \'undefined\') {
@@ -202,7 +202,7 @@ function uwp_recaptcha_display( $form ) {
 
 function uwp_recaptcha_check( $form ) {
 
-    if ( uwp_recaptcha_check_role() ) { // disable captcha as per user role settings
+    if ( uwp_recaptcha_check_role() ) {
         return '';
     }
 
