@@ -46,6 +46,7 @@ if(!class_exists('UsersWP_Recaptcha')) {
             add_action('uwp_validate_result', array($this, 'validate_recaptcha'), 10, 3);
             add_action('register_form', array($this, 'add_recaptcha_wp_register_form'), 10, 1);
             add_action('login_form', array($this, 'add_recaptcha_wp_login_form'), 10, 1);
+	        add_action('uwp_options_for_translation', array($this, 'uwp_add_options_for_translation'));
 
             if (is_admin()) {
                 add_action('admin_init', array($this, 'activation_redirect'));
@@ -329,5 +330,21 @@ if(!class_exists('UsersWP_Recaptcha')) {
 
             return $errors;
         }
+
+	    /**
+	     * Get the settings texts for translation.
+	     *
+	     * @param  array $uwp_options Array of text strings.
+	     * @return array Translation texts.
+	     */
+	    public function uwp_add_options_for_translation($uwp_options) {
+		    $uwp_options = !empty( $uwp_options ) && is_array( $uwp_options ) ? $uwp_options : array();
+
+		    $add_uwp_options = array(
+			    'recaptcha_title',
+		    );
+
+		    return array_merge($uwp_options, $add_uwp_options);
+	    }
     }
 }
