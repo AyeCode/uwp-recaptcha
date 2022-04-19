@@ -55,6 +55,9 @@ No questions so far, but don't hesitate to ask!
 
 == Changelog ==
 
+= 1.3.12 =
+* Add options into db-language.php for translation compatibility - FIXED
+
 = 1.3.11 =
 * Update readme file for WordPress version 5.9
 
