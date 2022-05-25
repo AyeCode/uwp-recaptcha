@@ -3,8 +3,8 @@ Contributors: stiofansisland, paoltaia, ayecode
 Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 4.9
-Tested up to: 5.9
-Stable tag: 1.3.11
+Tested up to: 6.0
+Stable tag: 1.3.12
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
