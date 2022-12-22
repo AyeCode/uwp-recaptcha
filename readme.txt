@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 4.9
 Tested up to: 6.1
-Stable tag: 1.3.13
+Stable tag: 1.3.14
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,6 +54,9 @@ No questions so far, but don't hesitate to ask!
 2. WP Login
 
 == Changelog ==
+
+= 1.3.14 =
+* Bots faking the action name could sometimes bypass ReCaptcha v3 - FIXED
 
 = 1.3.13 =
 * Update readme file for WordPress version 6.1

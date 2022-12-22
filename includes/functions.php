@@ -218,6 +218,8 @@ function uwp_recaptcha_check( $form ) {
     if ( isset( $response['success'] ) && $response['success'] ) {
         if('v3' ==  $captcha_version && $response['score'] <  $captcha_score && 'uwp_captcha' == $response['action']){
             $invalid_captcha = true;
+        } elseif( 'uwp_captcha' !== $response['action'] ){
+	        $invalid_captcha = true;
         } else {
             $invalid_captcha = false;
         }
