@@ -79,12 +79,12 @@ function uwp_recaptcha_display( $form ) {
             <?php } ?>
 
             <?php if ( $captcha_version == 'default' ) { ?>
-                <div id="<?php echo $div_id;?>" class="uwp-captcha-render"></div>
+                <div id="<?php echo esc_attr($div_id);?>" class="uwp-captcha-render"></div>
                 <script type="text/javascript">
                     try {
-                        var <?php echo $div_id;?> = function() {
-                            if ( ( typeof jQuery != 'undefined' && !jQuery('#<?php echo $div_id;?>').html() ) ) {
-                                grecaptcha.render('<?php echo $div_id;?>', { 'sitekey' : '<?php echo $site_key;?>', 'theme' : '<?php echo $captcha_theme;?>', 'size' : '<?php echo $captcha_size;?>' });
+                        var <?php echo esc_attr($div_id);?> = function() {
+                            if ( ( typeof jQuery != 'undefined' && !jQuery('#<?php echo esc_attr($div_id);?>').html() ) ) {
+                                grecaptcha.render('<?php echo esc_attr($div_id);?>', { 'sitekey' : '<?php echo $site_key;?>', 'theme' : '<?php echo $captcha_theme;?>', 'size' : '<?php echo $captcha_size;?>', 'action' : 'uwp_captcha' });
                             }
                         }
                     } catch(err) {
@@ -94,7 +94,7 @@ function uwp_recaptcha_display( $form ) {
             <?php } else if ( $captcha_version == 'v3' ) {
 		            $api_domain = apply_filters('uwp_recaptcha_js_domain', 'www.recaptcha.net');
                     $api_url = sprintf( 'https://%s/recaptcha/api.js?render=%s', $api_domain, $site_key);
-                    echo '<input type="hidden" id="'.$div_id.'" name="g-recaptcha-response" class="g-recaptcha-response">';
+                    echo '<input type="hidden" id="'.esc_attr($div_id).'" name="g-recaptcha-response" class="g-recaptcha-response">';
                     echo '<script src="' . $api_url . '"></script>
                             <script>
                             if (typeof grecaptcha != \'undefined\') {
@@ -107,10 +107,10 @@ function uwp_recaptcha_display( $form ) {
                              </script>';
                 ?>
             <?php } else { ?>
-                <div id="<?php echo $div_id;?>" class="uwp-captcha-render"></div>
+                <div id="<?php echo esc_attr($div_id);?>" class="uwp-captcha-render"></div>
                 <script type="text/javascript">
                      try {
-                        var <?php echo $div_id;?> = function() {
+                        var <?php echo esc_attr($div_id);?> = function() {
                             if (typeof grecaptcha == 'undefined') {
                                 var to;
                                 clearInterval(to);
@@ -216,9 +216,9 @@ function uwp_recaptcha_check( $form ) {
 
     $invalid_captcha = true;
     if ( isset( $response['success'] ) && $response['success'] ) {
-        if('v3' ==  $captcha_version && $response['score'] <  $captcha_score && 'uwp_captcha' == $response['action']){
+        if('v3' ==  $captcha_version && $response['score'] <  $captcha_score && isset($response['action']) && 'uwp_captcha' !== $response['action']){
             $invalid_captcha = true;
-        } elseif( 'uwp_captcha' !== $response['action'] ){
+        } elseif( isset($response['action']) && 'uwp_captcha' !== $response['action'] ){
 	        $invalid_captcha = true;
         } else {
             $invalid_captcha = false;
