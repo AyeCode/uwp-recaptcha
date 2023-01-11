@@ -216,13 +216,13 @@ function uwp_recaptcha_check( $form ) {
 
     $invalid_captcha = true;
     if ( isset( $response['success'] ) && $response['success'] ) {
-        if('v3' ==  $captcha_version && $response['score'] <  $captcha_score && isset($response['action']) && 'uwp_captcha' !== $response['action']){
-            $invalid_captcha = true;
-        } elseif( isset($response['action']) && 'uwp_captcha' !== $response['action'] ){
-	        $invalid_captcha = true;
-        } else {
-            $invalid_captcha = false;
-        }
+	    if ( ! ( isset( $response['action'] ) && 'uwp_captcha' == $response['action'] ) ) {
+		    $invalid_captcha = true;
+	    } else if ( 'v3' ==  $captcha_version && $response['score'] < $captcha_score ) {
+		    $invalid_captcha = true;
+	    } else {
+		    $invalid_captcha = false;
+	    }
     }
 
     if ( $invalid_captcha ) {
