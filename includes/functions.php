@@ -71,7 +71,7 @@ function uwp_recaptcha_display( $form ) {
             <?php
         }
 
-        echo $is_bootstrap ? '<div class="form-group">' :'<div class="uwp-captcha uwp-captcha-'.$form.'" style="margin: 7px 0;clear: both;margin-bottom: 15px;">';
+        echo $is_bootstrap ? '<div class="form-group mb-3">' :'<div class="uwp-captcha uwp-captcha-'.$form.'" style="margin: 7px 0;clear: both;margin-bottom: 15px;">';
         ?>
 
             <?php if ( trim( $captcha_title ) != '' ) { ?>
