@@ -135,6 +135,10 @@ if(!class_exists('UsersWP_Recaptcha')) {
 
 		        wp_localize_script('uwp_recaptcha_js_api', 'uwp_recaptcha_data', $localize_data);
 	        }
+
+            if ( function_exists('geodir_is_page') && geodir_is_page( 'detail' ) ) {
+                wp_deregister_script( 'uwp_recaptcha_js_api' );
+            }
         }
 
         public function inline_script(){

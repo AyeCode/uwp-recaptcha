@@ -55,6 +55,9 @@ No questions so far, but don't hesitate to ask!
 
 == Changelog ==
 
+= 1.3.21 =
+* Conflict with GD-captcha for reCaptcha V2 checkbox - FIXED
+
 = 1.3.20 =
 * Tested up to WP version 6.6 - CHANGED
 
