@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: UsersWP - ReCaptcha 1.3.20\n"
+"Project-Id-Version: UsersWP - ReCaptcha 1.3.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 14:41+0530\n"
-"PO-Revision-Date: 2024-07-22 14:41+0530\n"
+"POT-Creation-Date: 2025-09-09 15:09+0530\n"
+"PO-Revision-Date: 2025-09-09 15:09+0530\n"
 "Last-Translator: \n"
 "Language-Team: AyeCode <info@userswp.io>\n"
 "Language: en_US\n"
@@ -167,19 +167,19 @@ msgstr ""
 msgid "Invisible ReCaptcha"
 msgstr ""
 
-#: includes/class-uwp-recaptcha.php:205
+#: includes/class-uwp-recaptcha.php:209
 #, php-format
 msgid ""
 "UsersWP ReCaptcha addon: API Key and API Secret not set. %sclick here%s to "
 "set one."
 msgstr ""
 
-#: includes/class-uwp-recaptcha.php:207
+#: includes/class-uwp-recaptcha.php:211
 #, php-format
 msgid "UsersWP ReCaptcha addon: API Key not set. %sclick here%s to set one."
 msgstr ""
 
-#: includes/class-uwp-recaptcha.php:209
+#: includes/class-uwp-recaptcha.php:213
 #, php-format
 msgid "UsersWP ReCaptcha addon: API Secret not set. %sclick here%s to set one."
 msgstr ""
