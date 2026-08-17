@@ -113,6 +113,11 @@ if(!class_exists('UsersWP_Recaptcha')) {
 
         public function enqueue_scripts()
         {
+	        // Recaptcha isn't shown on GeoDirectory detail pages, so don't register/enqueue it there at all.
+	        if ( function_exists('geodir_is_page') && geodir_is_page( 'detail' ) ) {
+		        return;
+	        }
+
 	        $captcha_version = uwp_get_option( 'recaptcha_version', 'default' );
 
 	        if (!wp_script_is('uwp_recaptcha_js_api', 'registered')) {
@@ -135,10 +140,6 @@ if(!class_exists('UsersWP_Recaptcha')) {
 
 		        wp_localize_script('uwp_recaptcha_js_api', 'uwp_recaptcha_data', $localize_data);
 	        }
-
-            if ( function_exists('geodir_is_page') && geodir_is_page( 'detail' ) ) {
-                wp_deregister_script( 'uwp_recaptcha_js_api' );
-            }
         }
 
         public function inline_script(){
