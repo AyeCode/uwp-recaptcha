@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: recaptcha, frontend, login, register, account, users, restrict, userswp
 Requires at least: 6.1
 Tested up to: 7.1
-Stable tag: 1.3.23
+Stable tag: 1.3.24
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,9 @@ No questions so far, but don't hesitate to ask!
 
 == Changelog ==
 
+
+= 1.3.24 =
+* Auto updates sometimes throws fatal error - FIXED
 
 = 1.3.23 =
 * "uwp_recaptcha_js_api" reported as a missing/queued-but-not-registered script on GeoDirectory detail pages - FIXED

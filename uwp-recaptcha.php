@@ -3,7 +3,7 @@
 Plugin Name: UsersWP - ReCaptcha
 Plugin URI: https://userswp.io/
 Description: ReCaptcha add-on for UsersWP.
-Version: 1.3.23
+Version: 1.3.24
 Author: AyeCode Ltd
 Author URI: https://userswp.io
 License: GPL-2.0+
@@ -14,29 +14,27 @@ Domain Path: /languages
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'UWP_RECAPTCHA_VERSION', '1.3.23' );
+define( 'UWP_RECAPTCHA_VERSION', '1.3.24' );
 
 define( 'UWP_RECAPTCHA_PATH', plugin_dir_path( __FILE__ ) );
 
 define( 'UWP_RECAPTCHA_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-if ( is_admin() ) {
+if ( !function_exists( 'is_plugin_active' ) ) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
 
-    if ( !function_exists( 'deactivate_plugins' ) ) {
-        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-    }
+if ( !is_plugin_active( 'userswp/userswp.php' ) ) {
 
-    // Check UsersWP class exists or not.
-    if ( !is_plugin_active( 'userswp/userswp.php' ) ) {
-
+    if ( is_admin() ) {
         deactivate_plugins( plugin_basename( __FILE__ ) );
         function uwp_recaptcha_requires_userswp_plugin() {
             echo '<div class="notice notice-warning is-dismissible"><p><strong>' . sprintf( __( '%s requires %sUsersWP%s plugin to be installed and active.', 'uwp-recaptcha' ), 'UsersWP - Recaptcha', '<a href="https://wordpress.org/plugins/userswp/" target="_blank">', '</a>' ) . '</strong></p></div>';
         }
         add_action( 'admin_notices', 'uwp_recaptcha_requires_userswp_plugin' );
-        return;
-
     }
+
+    return;
 }
 
 require plugin_dir_path(__FILE__) . 'includes/class-uwp-recaptcha.php';
@@ -72,9 +70,13 @@ function activate_uwp_recaptcha($network_wide) {
 }
 register_activation_hook( __FILE__, 'activate_uwp_recaptcha' );
 
-
 function init_uwp_recaptcha() {
+
+    if ( !function_exists( 'uwp_get_option' ) ) {
+        return;
+    }
 
     UsersWP_Recaptcha::get_instance();
 }
+
 add_action( 'plugins_loaded', 'init_uwp_recaptcha', apply_filters( 'uwp_recaptcha_action_priority', 10 ) );

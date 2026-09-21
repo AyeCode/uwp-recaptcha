@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: UsersWP - ReCaptcha 1.3.23\n"
+"Project-Id-Version: UsersWP - ReCaptcha 1.3.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-17 16:33+0530\n"
-"PO-Revision-Date: 2026-08-17 16:33+0530\n"
+"POT-Creation-Date: 2026-09-21 16:15+0530\n"
+"PO-Revision-Date: 2026-09-21 16:15+0530\n"
 "Last-Translator: \n"
 "Language-Team: AyeCode <info@userswp.io>\n"
 "Language: en_US\n"
@@ -212,7 +212,7 @@ msgid ""
 "too old or has been used previously. Please try again."
 msgstr ""
 
-#: uwp-recaptcha.php:34
+#: uwp-recaptcha.php:32
 #, php-format
 msgid "%s requires %sUsersWP%s plugin to be installed and active."
 msgstr ""
